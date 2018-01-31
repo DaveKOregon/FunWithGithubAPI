@@ -1,0 +1,25 @@
+﻿@model HomeViews.Index
+@using FunWithGithubAPI.ViewModels
+
+<table>
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Repos[0].id)</th>
+            <th>@Html.DisplayNameFor(model => model.Repos[0].name)</th>
+            <th>@Html.DisplayNameFor(model => model.Repos[0].full_name)</th>
+            <th>@Html.DisplayNameFor(model => model.Repos[0].html_url)</th>
+            <th>@Html.DisplayNameFor(model => model.Repos[0].stargazers_count)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int itemNum = 0; itemNum < Model.Repos.Count(); itemNum++) {
+            <tr>
+                <td>@Html.DisplayFor(model => model.Repos[itemNum].id)</td>
+                <td>@Html.DisplayFor(model => model.Repos[itemNum].name)</td>
+                <td>@Html.DisplayFor(model => model.Repos[itemNum].full_name)</td>
+                <td>@Html.DisplayFor(model => model.Repos[itemNum].html_url)</td>
+                <td>@Html.DisplayFor(model => model.Repos[itemNum].stargazers_count)</td>
+            </tr>
+        }
+    <tbody>
+</table>
